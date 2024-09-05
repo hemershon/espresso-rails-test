@@ -3,7 +3,7 @@
 # Table name: cards
 #
 #  id         :bigint           not null, primary key
-#  last4      :string(255)
+#  last4      :string(255)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint

@@ -3,8 +3,8 @@
 # Table name: companies
 #
 #  id         :bigint           not null, primary key
-#  cnpj       :string(255)
-#  name       :string(255)
+#  cnpj       :string(255)      not null
+#  name       :string(255)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

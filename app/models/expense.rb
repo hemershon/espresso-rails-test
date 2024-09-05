@@ -4,10 +4,10 @@
 #
 #  id         :bigint           not null, primary key
 #  category   :string(255)
-#  cost       :integer
-#  merchant   :string(255)
+#  cost       :integer          not null
+#  merchant   :string(255)      not null
 #  proof      :string(255)
-#  status     :string(255)
+#  status     :string(255)      default("unverified"), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  card_id    :bigint
