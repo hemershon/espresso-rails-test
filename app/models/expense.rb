@@ -37,6 +37,6 @@ class Expense < ApplicationRecord
   private
 
   def convert_cost_to_real
-    self.cost = cost.to_f / 100
+    cost.to_f / 100
   end
 end
