@@ -26,11 +26,11 @@ RSpec.describe Card do
   it { is_expected.to belong_to(:user) }
   it { is_expected.to have_many(:expenses).dependent(:destroy) }
 
-  # Validações
+
   it { is_expected.to validate_presence_of(:last4) }
   it { is_expected.to validate_length_of(:last4).is_equal_to(4) }
 
-  # Teste de fábrica (FactoryBot)
+
   describe 'valid Card' do
     let(:user) { create(:user) }
     let(:card) { build(:card, user: user, last4: '1234') }
