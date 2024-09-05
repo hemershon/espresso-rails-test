@@ -22,7 +22,6 @@
 #
 #  fk_rails_...  (card_id => cards.id)
 #
-# spec/factories/expenses.rb
 FactoryBot.define do
   factory :expense do
     merchant { 'Sample Merchant' }
