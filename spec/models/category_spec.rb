@@ -20,7 +20,7 @@
 #
 require 'rails_helper'
 
-RSpec.describe Category, type: :model do
+RSpec.describe Category do
   let(:company) { create(:company) }
   let(:category) { create(:category, company: company) }
 
