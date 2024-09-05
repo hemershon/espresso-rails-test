@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: expenses
@@ -23,19 +25,19 @@
 # spec/factories/expenses.rb
 FactoryBot.define do
   factory :expense do
-    merchant { "Sample Merchant" }
-    cost { 10000 }
-    status { "unverified" }
-    category { "Food" }
-    proof { "sample_proof.png" }
+    merchant { 'Sample Merchant' }
+    cost { 10_000 }
+    status { 'unverified' }
+    category { 'Food' }
+    proof { 'sample_proof.png' }
     association :card
 
     trait :verified do
-      status { "verified" }
+      status { 'verified' }
     end
 
     trait :archived do
-      status { "archived" }
+      status { 'archived' }
     end
   end
 end

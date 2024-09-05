@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: cards
@@ -18,34 +20,33 @@
 #
 require 'rails_helper'
 
-RSpec.describe Card, type: :model do
+RSpec.describe Card do
   let(:user) { create(:user) }
 
-  it { should belong_to(:user) }
-  it { should have_many(:expenses).dependent(:destroy) }
+  it { is_expected.to belong_to(:user) }
+  it { is_expected.to have_many(:expenses).dependent(:destroy) }
 
   # Validações
-  it { should validate_presence_of(:last4) }
-  it { should validate_length_of(:last4).is_equal_to(4) }
+  it { is_expected.to validate_presence_of(:last4) }
+  it { is_expected.to validate_length_of(:last4).is_equal_to(4) }
 
   # Teste de fábrica (FactoryBot)
-  describe "valid Card" do
+  describe 'valid Card' do
     let(:user) { create(:user) }
-    let(:card) { build(:card, user: user, last4: "1234") }
+    let(:card) { build(:card, user: user, last4: '1234') }
 
-    it "is valid with valid attributes" do
+    it 'is valid with valid attributes' do
       expect(card).to be_valid
     end
 
-    it "is not valid without a last4" do
+    it 'is not valid without a last4' do
       card.last4 = nil
       expect(card).not_to be_valid
     end
 
-    it "is not valid if last4 is not exactly 4 characters" do
-      card.last4 = "123"
+    it 'is not valid if last4 is not exactly 4 characters' do
+      card.last4 = '123'
       expect(card).not_to be_valid
     end
-
   end
 end

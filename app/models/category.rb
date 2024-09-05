@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: categories
@@ -18,4 +20,6 @@
 #
 class Category < ApplicationRecord
   belongs_to :company
+
+  validates :name, presence: true
 end

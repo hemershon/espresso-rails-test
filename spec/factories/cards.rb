@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: cards
@@ -18,7 +20,7 @@
 #
 FactoryBot.define do
   factory :card do
-    last4 { "1234" }
+    last4 { '1234' }
     association :user
   end
 end

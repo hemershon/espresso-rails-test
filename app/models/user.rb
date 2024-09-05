@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -39,12 +41,11 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
   validates :role, presence: true, inclusion: { in: %w[admin employee] }
 
-
   def admin?
-    role == "admin"
+    role == 'admin'
   end
 
   def employee?
-    role == "employee"
+    role == 'employee'
   end
 end

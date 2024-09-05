@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: categories
@@ -18,7 +20,7 @@
 #
 FactoryBot.define do
   factory :category do
-    name { "MyString" }
-    company { nil }
+    name { Faker::Commerce.department }
+    association :company
   end
 end

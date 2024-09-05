@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: statements
@@ -21,9 +23,9 @@
 #
 FactoryBot.define do
   factory :statement do
-    performed_at { "" }
+    performed_at { '' }
     cost { 1 }
-    merchant { "MyString" }
+    merchant { 'MyString' }
     transaction_id { 1 }
     category { nil }
   end
