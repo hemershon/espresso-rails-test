@@ -15,5 +15,5 @@ class Company < ApplicationRecord
   has_many :cards, through: :users
 
   validates :name, presence: true
-  validates :cnpj, presence: true, uniqueness: true # , format: { with: /\A\d{14}\z/, message: "Valid CNPJ" }
+  validates :cnpj, presence: true
 end

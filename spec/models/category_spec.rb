@@ -24,7 +24,7 @@ RSpec.describe Category do
   let(:company) { create(:company) }
   let(:category) { create(:category, company: company) }
 
-  context 'validations' do
+  context 'when validating' do
     it 'is valid with valid attributes' do
       expect(category).to be_valid
     end
@@ -40,7 +40,7 @@ RSpec.describe Category do
     end
   end
 
-  context 'associations' do
+  context 'when associating' do
     it 'belongs to a company' do
       expect(category.company).to eq(company)
     end

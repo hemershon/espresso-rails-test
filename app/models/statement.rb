@@ -27,5 +27,5 @@ class Statement < ApplicationRecord
   validates :cost, presence: true, numericality: { greater_than: 0 }
   validates :merchant, presence: true
   validates :performed_at, presence: true
-  validates :transaction_id, presence: true, uniqueness: true
+  validates :transaction_id, presence: true
 end
