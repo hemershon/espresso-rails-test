@@ -25,6 +25,7 @@
 require 'rails_helper'
 
 RSpec.describe Expense do
+
   describe 'associations' do
     it { is_expected.to belong_to(:card) }
     it { is_expected.to have_one(:user).through(:card) }
