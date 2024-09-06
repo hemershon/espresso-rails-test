@@ -23,6 +23,12 @@ require 'rails_helper'
 RSpec.describe Card do
   let(:user) { create(:user) }
 
+  context 'with migrations' do
+    it { is_expected.to have_db_column(:id).of_type(:integer).with_options(null: false) }
+    it { is_expected.to have_db_column(:last4).of_type(:string).with_options(null: false) }
+    it { is_expected.to have_db_column(:user_id).of_type(:integer).with_options(null: false) }
+  end
+
   it { is_expected.to belong_to(:user) }
   it { is_expected.to have_many(:expenses).dependent(:destroy) }
 
